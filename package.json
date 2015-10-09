@@ -1,0 +1,31 @@
+{
+  "name": "each-part",
+  "version": "0.7.0",
+  "description": "Transform stream which emits each part and pushes object with part",
+  "main": "lib",
+  "keywords": [],
+  "author": "Eli Doran <eli+npm@elidoran.com>",
+  "license": "MIT",
+  "scripts": {
+    "compile": "coffee --bare --compile lib",
+    "clean": "rm -rf lib/*.js",
+    "prepublish": "coffee --bare --compile lib",
+    "postpublish": "rm -rf lib/*.js",
+    "test": "mocha --compilers coffee:coffee-script/register --reporter spec --bail --check-leaks test/lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/elidoran/node-each-part.git"
+  },
+  "bugs": "http://github.com/elidoran/node-each-part/issues",
+  "devDependencies": {
+    "coffee-script": "^1.10.0",
+    "mocha": "^2.3.3",
+    "strung": "^1.0.4",
+    "through2": "^2.0.0"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=0.10"
+  }
+}
