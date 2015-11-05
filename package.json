@@ -24,7 +24,9 @@
     "strung": "^1.0.4",
     "through2": "^2.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "stream-search-helper": "^0.5.0"
+  },
   "engines": {
     "node": ">=0.10"
   }
