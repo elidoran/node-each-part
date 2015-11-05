@@ -1,6 +1,6 @@
 {
   "name": "each-part",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Transform stream which emits each part and pushes object with part",
   "main": "lib",
   "keywords": [],
