@@ -13,9 +13,9 @@ describe 'test eachLine *as builder function*', ->
       source = strung testString
       each = eachLine()
       each.on 'error', done
-      each.on 'finish', (error) -> done error
+      each.on 'finish', done
       thru = through.obj (part, _, next) -> assert.equal part.string, testString
-      each.on 'part', (part) -> assert.equal part, testString
+      each.on 'part', (part) -> assert.equal part.string, testString
 
       source.pipe(each).pipe thru
 
@@ -34,9 +34,9 @@ describe 'test eachLine *as builder function*', ->
       source = strung testString
       each = eachLine()
       each.on 'error', done
-      each.on 'finish', (error) -> done error
+      each.on 'finish', done
       each.on 'part', (part) ->
-        assert.equal part, results[eachIndex]
+        assert.equal part.string, results[eachIndex]
         eachIndex++
       thru = through.obj (part, _, next) ->
         assert.equal part.string, results[thruIndex]
@@ -54,9 +54,9 @@ describe 'test eachLine *as builder function*', ->
       source = strung testString
       each = eachLine()
       each.on 'error', done
-      each.on 'finish', (error) -> done error
+      each.on 'finish', done
       each.on 'part', (part) ->
-        assert.equal part, results[eachIndex]
+        assert.equal part.string, results[eachIndex]
         eachIndex++
       thru = through.obj (part, _, next) ->
         assert.equal part.string, results[thruIndex]
@@ -74,9 +74,9 @@ describe 'test eachLine *as builder function*', ->
       source = strung testString
       each = eachLine()
       each.on 'error', done
-      each.on 'finish', (error) -> done error
+      each.on 'finish', done
       each.on 'part', (part) ->
-        assert.equal part, results[eachIndex]
+        assert.equal part.string, results[eachIndex]
         eachIndex++
       thru = through.obj (part, _, next) ->
         assert.equal part.string, results[thruIndex]
@@ -94,9 +94,9 @@ describe 'test eachLine *as builder function*', ->
       source = strung testString
       each = eachLine()
       each.on 'error', done
-      each.on 'finish', (error) -> done error
+      each.on 'finish', done
       each.on 'part', (part) ->
-        assert.equal part, results[eachIndex]
+        assert.equal part.string, results[eachIndex]
         eachIndex++
       thru = through.obj (part, _, next) ->
         assert.equal part.string, results[thruIndex]
@@ -112,8 +112,8 @@ describe 'test eachLine *as builder function*', ->
       source = strung testString
       each = eachLine()
       each.on 'error', done
-      each.on 'finish', (error) -> done error
-      each.on 'part', (part) -> assert.equal part, result
+      each.on 'finish', done
+      each.on 'part', (part) -> assert.equal part.string, result
       thru = through.obj (part, _, next) ->
         assert.equal part.string, result
         next()
