@@ -20,12 +20,12 @@
   "bugs": "http://github.com/elidoran/node-each-part/issues",
   "devDependencies": {
     "coffee-script": "^1.10.0",
-    "mocha": "^2.3.3",
+    "mocha": "^2.4.4",
     "strung": "^1.0.4",
     "through2": "^2.0.0"
   },
   "dependencies": {
-    "stream-search-helper": "^0.6.0"
+    "stream-search-helper": "^0.7.1"
   },
   "engines": {
     "node": ">=0.10"
