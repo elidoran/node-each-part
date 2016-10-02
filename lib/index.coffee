@@ -42,7 +42,7 @@ class EachPart extends Transform
       if @options.readableObjectMode then string:string, delim:delim
       else string
     @push part
-    @emit 'part', part # emit as an event
+    @emit 'part', part, delim # emit as an event
 
   reset: (options) ->
     # set new options if provided, ensure objectMode:true is set
