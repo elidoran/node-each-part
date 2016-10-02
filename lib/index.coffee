@@ -38,8 +38,10 @@ class EachPart extends Transform
     done()
 
   _part: (string, delim) ->
-    part = string:string, delim:delim
-    @push part # push as an object
+    part = # if object mode is on, then create an object, else use string
+      if @options.readableObjectMode then string:string, delim:delim
+      else string
+    @push part
     @emit 'part', part # emit as an event
 
   reset: (options) ->
