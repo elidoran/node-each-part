@@ -28,6 +28,6 @@
     "stream-search-helper": "^0.7.1"
   },
   "engines": {
-    "node": ">=0.10"
+    "node": ">=0.12"
   }
 }
