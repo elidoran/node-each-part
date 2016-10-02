@@ -45,10 +45,11 @@ class EachPart extends Transform
   reset: (options) ->
     # set new options if provided, ensure objectMode:true is set
     if options?
-      options.objectMode = true
+      # only set it to true if it hasn't been specified already
+      unless options.readableObjectMode? then options.readableObjectMode = true
       @options = options
     else
-      @options = objectMode:true
+      @options = readableObjectMode:true
 
     # rerun constructor to reconfigure it
     Transform.call this, @options
